@@ -67,13 +67,38 @@
   background-color: #6c8cff;
 }
 
+.loader-container {
+  display: none; /* Приховано за замовчуванням */
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.loader-container.is-visible {
+  display: flex;
+}
+
 .loader {
-  display: none; /* за замовчуванням прихований */
-  /* твої стилі анімації лоадера */
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #4e75ff; /* Акцентний колір з макету */
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
 
 .loader.is-visible {
   display: block; /* показуємо, коли додано клас */
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .gallery {

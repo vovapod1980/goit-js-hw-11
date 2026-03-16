@@ -3,7 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryContainer = document.querySelector('.gallery');
 // ДОДАНО: визначення лоадера
-const loader = document.querySelector('.loader');
+const loaderContainer = document.querySelector('.loader-container');
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -53,9 +53,9 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  if (loader) loader.classList.add('is-visible');
+  if (loaderContainer) loaderContainer.classList.add('is-visible');
 }
 
 export function hideLoader() {
-  if (loader) loader.classList.remove('is-visible');
+  if (loaderContainer) loaderContainer.classList.remove('is-visible');
 }
