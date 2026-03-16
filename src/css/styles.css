@@ -7,10 +7,71 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
 
-/* Sections style */
-@import url('./header.css');
+.form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
 
-@import url('./badges.css');
-@import url('./back-link.css');
+.form input {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form input:hover {
+  border-color: #000;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form button[type='submit'] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+
+  min-width: 91px;
+  height: 40px;
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 8px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form button[type='submit']:hover {
+  background-color: #6c8cff;
+}
+
+.loader {
+  display: none; /* за замовчуванням прихований */
+  /* твої стилі анімації лоадера */
+}
+
+.loader.is-visible {
+  display: block; /* показуємо, коли додано клас */
+}
