@@ -23,8 +23,14 @@ export function createGallery(images) {
         downloads,
       }) => `
     <li class="gallery-item">
+      <!-- Обгортка-посилання для SimpleLightbox -->
       <a class="gallery-link" href="${largeImageURL}">
-        <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
+        <img 
+          class="gallery-image" 
+          src="${webformatURL}" 
+          alt="${tags}" 
+          title="${tags}" 
+        />
       </a>
       <div class="info">
         <div class="info-item"><b>Likes</b><span>${likes}</span></div>
@@ -37,6 +43,8 @@ export function createGallery(images) {
     .join('');
 
   galleryContainer.insertAdjacentHTML('beforeend', markup);
+
+  // Обов'язково оновлюємо екземпляр після додавання нових елементів
   lightbox.refresh();
 }
 
