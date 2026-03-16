@@ -14,8 +14,9 @@ const searchForm = document.querySelector('.form');
 searchForm.addEventListener('submit', async event => {
   event.preventDefault();
 
-  // ВИПРАВЛЕНО: Отримуємо значення поля за іменем "search-text"
-  const query = event.currentTarget.querySelector('input').value.trim();
+  // Шукаємо інпут безпосередньо через querySelector всередині форми
+  const input = event.currentTarget.querySelector('input');
+  const query = input ? input.value.trim() : '';
 
   if (query === '') {
     iziToast.warning({
@@ -24,7 +25,6 @@ searchForm.addEventListener('submit', async event => {
     });
     return;
   }
-
   clearGallery();
   showLoader();
 

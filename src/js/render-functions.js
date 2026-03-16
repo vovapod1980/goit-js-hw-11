@@ -2,9 +2,9 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryContainer = document.querySelector('.gallery');
+// ДОДАНО: визначення лоадера
 const loader = document.querySelector('.loader');
 
-// Ініціалізація SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
@@ -27,10 +27,10 @@ export function createGallery(images) {
         <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
       </a>
       <div class="info">
-        <p class="info-item"><b>Likes</b><span>${likes}</span></p>
-        <p class="info-item"><b>Views</b><span>${views}</span></p>
-        <p class="info-item"><b>Comments</b><span>${comments}</span></p>
-        <p class="info-item"><b>Downloads</b><span>${downloads}</span></p>
+        <div class="info-item"><b>Likes</b><span>${likes}</span></div>
+        <div class="info-item"><b>Views</b><span>${views}</span></div>
+        <div class="info-item"><b>Comments</b><span>${comments}</span></div>
+        <div class="info-item"><b>Downloads</b><span>${downloads}</span></div>
       </div>
     </li>`
     )
@@ -45,9 +45,9 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.add('is-visible');
+  if (loader) loader.classList.add('is-visible');
 }
 
 export function hideLoader() {
-  loader.classList.remove('is-visible');
+  if (loader) loader.classList.remove('is-visible');
 }
